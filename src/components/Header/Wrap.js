@@ -5,6 +5,7 @@ const Wrap = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  border-bottom: 1px solid #e5e5e5;
 `;
 
 export default Wrap;
