@@ -5,7 +5,7 @@ const ThemeLink = styled(Link)`
   width: 144px;
   height: 74px;
   font-weight: 700;
-  color: #fff;
+  color: ${({ theme: { color } }) => color.white};
   text-decoration: none;
   padding: 24px 16px;
   background-color: rgba(0, 0, 0, 0.5);

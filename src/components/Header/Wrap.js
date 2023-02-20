@@ -6,7 +6,7 @@ const Wrap = styled.div`
   justify-content: center;
   align-items: center;
   border-bottom: 1px solid #e5e5e5;
-  background-color: #fff;
+  background-color: ${({ theme: { color } }) => color.white};
 `;
 
 export default Wrap;
