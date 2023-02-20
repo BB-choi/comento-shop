@@ -13,8 +13,8 @@ const App = () => {
         <GlobalStyle />
         <Routes>
           <Route index element={<Home />} />
-          <Route path="product/:productId" element={<ProductDetail />} />
-          <Route path="basket" element={<Basket />} />
+          <Route path="/product/:productId" element={<ProductDetail />} />
+          <Route path="/basket" element={<Basket />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
