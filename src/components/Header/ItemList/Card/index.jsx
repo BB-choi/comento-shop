@@ -1,13 +1,13 @@
-import { Link } from "react-router-dom";
 import CardImage from "./CardImage";
+import Title from "./Title";
+import CardLink from "./CardLink";
 
-const Card = ({ linkTo, imgUrl }) => {
-  console.log("linkTo", linkTo, "imgUrl", imgUrl);
-
+const Card = ({ linkTo, title, desc, imgUrl }) => {
   return (
-    <Link to={linkTo}>
+    <CardLink to={linkTo}>
       <CardImage url={imgUrl} />
-    </Link>
+      <Title>{title}</Title>
+    </CardLink>
   );
 };
 
