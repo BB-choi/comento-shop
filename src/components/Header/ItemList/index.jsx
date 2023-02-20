@@ -5,8 +5,14 @@ import Wrap from "./Wrap";
 const ItemList = () => {
   return (
     <Wrap>
-      {shop_items.map(({ item_id, title, desc, url }) => (
-        <Card linkTo="/" title={title} desc={desc} imgUrl={url} key={item_id} />
+      {shop_items.map(({ item_id, title, desc, url, img }) => (
+        <Card
+          linkTo={url}
+          title={title}
+          desc={desc}
+          imgUrl={img}
+          key={item_id}
+        />
       ))}
     </Wrap>
   );
