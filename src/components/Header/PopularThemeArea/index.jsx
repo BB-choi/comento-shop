@@ -1,11 +1,15 @@
+import { popular_themes } from "../../../data/mockData";
 import ThemeLink from "./ThemeLink";
 import Wrap from "./Wrap";
 
 const PopularThemeArea = () => {
   return (
     <Wrap>
-      <ThemeLink to="/"># 겨울 방한템</ThemeLink>
-      <ThemeLink to="/"># 따순 머그컵</ThemeLink>
+      {popular_themes.map((theme, idx) => (
+        <ThemeLink to="/" key={`${theme}${idx}`}>
+          # {theme}
+        </ThemeLink>
+      ))}
     </Wrap>
   );
 };
