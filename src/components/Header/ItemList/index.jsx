@@ -26,7 +26,7 @@ const ItemList = () => {
   return (
     <Wrap>
       {temp_items.map(({ item_id, title, desc, url }) => (
-        <Card linkTo="/" title={title} imgUrl={url} key={item_id} />
+        <Card linkTo="/" title={title} desc={desc} imgUrl={url} key={item_id} />
       ))}
     </Wrap>
   );
