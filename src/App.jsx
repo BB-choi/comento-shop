@@ -9,7 +9,7 @@ import theme from "./theme";
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <GlobalStyle />
         <Routes>
           <Route index element={<Home />} />
