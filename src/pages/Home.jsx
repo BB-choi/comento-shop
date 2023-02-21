@@ -1,5 +1,5 @@
 import Header from "../components/Header";
-import ItemList from "../components/Header/ItemList";
+import ItemList from "../components/Main/ItemList";
 import Container from "./Container";
 
 const Home = () => {
