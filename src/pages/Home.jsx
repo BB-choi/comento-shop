@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Header from "../components/Header";
 import ItemList from "../components/Main/ItemList";
 import Container from "./Container";
@@ -6,12 +6,18 @@ import Container from "./Container";
 const DEFAULT_PRODUCTS = 1;
 
 const Home = () => {
-  const [products, setProducts] = useState(DEFAULT_PRODUCTS);
+  const [products, setProducts] = useState();
+
+  useEffect(() => {
+    setTimeout(() => {
+      setProducts(DEFAULT_PRODUCTS);
+    }, 1000);
+  }, []);
 
   return (
     <Container>
       <Header setProducts={setProducts} />
-      <ItemList products={products} />
+      {products && <ItemList products={products} />}
     </Container>
   );
 };
