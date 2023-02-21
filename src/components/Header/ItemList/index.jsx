@@ -1,17 +1,17 @@
-import { shop_items } from "../../../data/mockData";
+import { mockTheme1Produdcts } from "../../../data/mockData";
 import Card from "./Card";
 import Wrap from "./Wrap";
 
 const ItemList = () => {
   return (
     <Wrap>
-      {shop_items.map(({ item_id, title, desc, url, img }) => (
+      {mockTheme1Produdcts.map(({ id, name, description, url, thumbnail }) => (
         <Card
           linkTo={url}
-          title={title}
-          desc={desc}
-          imgUrl={img}
-          key={item_id}
+          name={name}
+          desc={description}
+          imgUrl={thumbnail}
+          key={id}
         />
       ))}
     </Wrap>

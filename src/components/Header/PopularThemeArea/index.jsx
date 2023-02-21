@@ -5,9 +5,9 @@ import Wrap from "./Wrap";
 const PopularThemeArea = () => {
   return (
     <Wrap>
-      {popular_themes.map((theme, idx) => (
-        <ThemeLink to="/" key={`${theme}${idx}`}>
-          # {theme}
+      {popular_themes.map(({ id, name }) => (
+        <ThemeLink to="/" key={id}>
+          # {name}
         </ThemeLink>
       ))}
     </Wrap>

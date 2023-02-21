@@ -4,12 +4,12 @@ import CardLink from "./CardLink";
 import Desc from "./Desc";
 import Wrap from "./Wrap";
 
-const Card = ({ linkTo, title, desc, imgUrl }) => {
+const Card = ({ linkTo, name, desc, imgUrl }) => {
   return (
     <Wrap>
       <CardLink to={linkTo}>
         <CardImage url={imgUrl} />
-        <Title>{title}</Title>
+        <Title>{name}</Title>
         <Desc>{desc}</Desc>
       </CardLink>
     </Wrap>
