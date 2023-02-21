@@ -4,6 +4,12 @@ const GlobalStyle = createGlobalStyle`
 
 /* custom */ 
 letter-spacing: -0.01em;
+
+button {
+  border: 0;
+	padding: 0;
+	margin: 0;
+}
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)

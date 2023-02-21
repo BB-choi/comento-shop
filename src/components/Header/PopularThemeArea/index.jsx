@@ -1,14 +1,12 @@
 import { popular_themes } from "../../../data/mockData";
-import ThemeLink from "./ThemeLink";
+import ThemeButton from "./ThemeButton";
 import Wrap from "./Wrap";
 
 const PopularThemeArea = () => {
   return (
     <Wrap>
       {popular_themes.map(({ id, name }) => (
-        <ThemeLink to="/" key={id}>
-          # {name}
-        </ThemeLink>
+        <ThemeButton key={id}># {name}</ThemeButton>
       ))}
     </Wrap>
   );
