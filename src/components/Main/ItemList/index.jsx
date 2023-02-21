@@ -7,9 +7,9 @@ const ItemList = ({ products }) => {
 
   return (
     <Wrap>
-      {currentProducts.map(({ id, name, description, url, thumbnail }) => (
+      {currentProducts.map(({ id, name, description, thumbnail }) => (
         <Card
-          linkTo={url}
+          id={id}
           name={name}
           desc={description}
           imgUrl={thumbnail}
