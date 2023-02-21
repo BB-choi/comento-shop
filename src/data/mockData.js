@@ -3,7 +3,7 @@ export const popular_themes = [
   { id: 1, name: "따순머그컵" },
 ];
 
-export const mockTheme1Produdcts = [
+const mockTheme1Products = [
   {
     id: 1,
     price: 21800,
@@ -41,7 +41,7 @@ export const mockTheme1Produdcts = [
   },
 ];
 
-export const mockTheme2Produdcts = [
+const mockTheme2Products = [
   {
     id: 7,
     price: 6000,
@@ -75,8 +75,13 @@ export const mockTheme2Produdcts = [
   },
 ];
 
+export const mockThemeProducts = {
+  mockTheme1Products,
+  mockTheme2Products,
+};
+
 export const getProductDetail = (productId) => {
-  return [...mockTheme1Produdcts, ...mockTheme2Produdcts].find((product) => {
+  return [...mockTheme1Products, ...mockTheme2Products].find((product) => {
     return product.id === Number(productId);
   });
 };

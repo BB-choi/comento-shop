@@ -2,11 +2,13 @@ import { popular_themes } from "../../../data/mockData";
 import ThemeButton from "./ThemeButton";
 import Wrap from "./Wrap";
 
-const PopularThemeArea = () => {
+const PopularThemeArea = ({ setProducts }) => {
   return (
     <Wrap>
       {popular_themes.map(({ id, name }) => (
-        <ThemeButton key={id}># {name}</ThemeButton>
+        <ThemeButton onClick={() => setProducts(id)} key={id}>
+          # {name}
+        </ThemeButton>
       ))}
     </Wrap>
   );
