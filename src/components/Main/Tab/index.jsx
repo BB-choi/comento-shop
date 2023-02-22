@@ -1,4 +1,3 @@
-// import { useRef } from "react";
 import { useState } from "react";
 import Panel from "./Panel";
 import PanelDetail from "./Panel/PanelDetail";
@@ -46,10 +45,10 @@ const Tab = ({ mainImage, productId }) => {
       </TabList>
       {tabs.map(({ id, children }) => (
         <Panel
+          key={id}
           panelId={id}
           isSelected={currentItem === id}
           role="tabpanel"
-          key={id}
         >
           {children}
         </Panel>
