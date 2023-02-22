@@ -8,6 +8,7 @@ const TabLink = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: center;
+  color: ${({ theme: { color } }) => color.black};
 
   &:hover,
   &:visited,
