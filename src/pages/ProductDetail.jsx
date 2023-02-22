@@ -25,7 +25,7 @@ const ProductDetail = () => {
       <>
         <ProductThumbnail src={thumbnail} alt={name} />
         <ProductInfo name={name} price={price} />
-        <Tab />
+        <Tab mainImage={mainImage} productId={productId} />
       </>
     </Container>
   );

@@ -1,32 +1,60 @@
 // import { useRef } from "react";
 import { useState } from "react";
+import Panel from "./Panel";
+import PanelDetail from "./Panel/PanelDetail";
+import PanelReview from "./Panel/PanelReview";
 import TabItem from "./TabItem";
 import TabList from "./TabList";
 
-const tabs = [
-  { id: "tab-1", name: "상품 설명" },
-  { id: "tab-2", name: "상품 후기" },
-];
+const tabName = {
+  detail: "상품 설명",
+  review: "상품 후기",
+};
 
-const Tab = () => {
-  const [currentItem, setCurrentItem] = useState("tab-1");
+const Tab = ({ mainImage, productId }) => {
+  const tabs = [
+    {
+      id: "tab-1",
+      name: tabName.detail,
+      children: <PanelDetail imgUrl={mainImage} desc={tabName.detail} />,
+    },
+    {
+      id: "tab-2",
+      name: tabName.review,
+      children: <PanelReview productId={productId} />,
+    },
+  ];
+
+  const [currentItem, setCurrentItem] = useState(tabs[0].id);
 
   return (
-    <TabList role="tablist">
-      {tabs.map(({ id, name }) => (
-        <TabItem
+    <>
+      <TabList role="tablist">
+        {tabs.map(({ id, name }) => (
+          <TabItem
+            isSelected={currentItem === id}
+            id={id}
+            key={id}
+            onClick={(e) => {
+              e.preventDefault();
+              setCurrentItem(id);
+            }}
+          >
+            {name}
+          </TabItem>
+        ))}
+      </TabList>
+      {tabs.map(({ id, children }) => (
+        <Panel
+          panelId={id}
           isSelected={currentItem === id}
-          id={id}
+          role="tabpanel"
           key={id}
-          onClick={(e) => {
-            e.preventDefault();
-            setCurrentItem(id);
-          }}
         >
-          {name}
-        </TabItem>
+          {children}
+        </Panel>
       ))}
-    </TabList>
+    </>
   );
 };
 
