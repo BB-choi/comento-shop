@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import ProductButton from "../components/common/ProductButton";
 import Header from "../components/Header";
 import ProductInfo from "../components/Main/ProductInfo";
 import ProductThumbnail from "../components/Main/ProductThumbnail";
@@ -26,6 +27,14 @@ const ProductDetail = () => {
         <ProductThumbnail src={thumbnail} alt={name} />
         <ProductInfo name={name} price={price} />
         <Tab mainImage={mainImage} productId={productId} />
+        <ProductButton
+          onClick={() => {
+            // TODO: 버튼 이벤트 핸들러 수정
+            console.log("테스트용");
+          }}
+        >
+          장바구니 담기
+        </ProductButton>
       </>
     </Container>
   );

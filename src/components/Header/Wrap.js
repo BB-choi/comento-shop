@@ -7,6 +7,8 @@ const Wrap = styled.div`
   display: flex;
   align-items: center;
   border-bottom: 1px solid #e5e5e5;
+  position: sticky;
+  top: 0;
   background-color: ${({ theme: { color } }) => color.white};
 `;
 
