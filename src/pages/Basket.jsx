@@ -1,5 +1,14 @@
+import Header from "components/Header";
+import BasketProducts from "components/Main/BasketProducts";
+import Container from "./Container";
+
 const Basket = () => {
-  return <p>장바구니</p>;
+  return (
+    <Container>
+      <Header />
+      <BasketProducts />
+    </Container>
+  );
 };
 
 export default Basket;

@@ -13,6 +13,7 @@ const Header = ({ setProducts }) => {
         {!setProducts && (
           <IconButton
             icon="back"
+            component="header"
             onClick={() => {
               navigate(-1);
             }}
