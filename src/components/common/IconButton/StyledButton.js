@@ -1,4 +1,15 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+
+const buttonPosition = {
+  header: css`
+    top: calc(50% - 10px);
+    left: 25px;
+  `,
+  basket: css`
+    top: 0;
+    right: 0;
+  `,
+};
 
 const StyledButton = styled.button`
   width: 20px;
@@ -8,9 +19,8 @@ const StyledButton = styled.button`
   align-items: center;
   justify-content: center;
   position: absolute;
-  top: calc(50% - 10px);
-  left: 25px;
   cursor: pointer;
+  ${({ component }) => buttonPosition[component]}
 `;
 
 export default StyledButton;
