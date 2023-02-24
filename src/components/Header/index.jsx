@@ -4,7 +4,9 @@ import PopularThemeArea from "./PopularThemeArea";
 import Title from "./Title";
 import Wrap from "./Wrap";
 
-const Header = ({ setProducts }) => {
+const SITE_NAME = "코멘토 쇼핑";
+
+const Header = ({ setProducts, name = SITE_NAME }) => {
   const navigate = useNavigate();
 
   return (
@@ -19,7 +21,7 @@ const Header = ({ setProducts }) => {
             }}
           />
         )}
-        <Title>코멘토 쇼핑</Title>
+        <Title>{name}</Title>
       </Wrap>
       {setProducts && <PopularThemeArea setProducts={setProducts} />}
     </>

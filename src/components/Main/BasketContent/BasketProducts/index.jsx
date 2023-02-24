@@ -4,8 +4,8 @@ import Wrap from "./Wrap";
 const BasketProducts = ({ products }) => {
   return (
     <Wrap>
-      {products.map((productId) => (
-        <BasketItem productId={productId} key={productId} />
+      {products.map((product) => (
+        <BasketItem product={product} key={product.id} />
       ))}
     </Wrap>
   );

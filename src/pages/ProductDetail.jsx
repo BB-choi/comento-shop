@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { addBasket } from "utils/webStorage";
 import ProductButton from "../components/common/ProductButton";
 import Header from "../components/Header";
 import ProductInfo from "../components/Main/ProductInfo";
@@ -11,6 +12,15 @@ import Container from "./Container";
 const ProductDetail = () => {
   const { productId } = useParams();
   const [product, setProduct] = useState();
+  const navigate = useNavigate();
+
+  const onClickAddBasketButton = () => {
+    if (!addBasket(productId)) {
+      alert("이미 장바구니에 있는 상품입니다.");
+    }
+
+    navigate("/basket");
+  };
 
   useEffect(() => setProduct(getProductDetail(productId)), [productId]);
 
@@ -27,13 +37,7 @@ const ProductDetail = () => {
         <ProductThumbnail src={thumbnail} alt={name} />
         <ProductInfo name={name} price={price} />
         <Tab mainImage={mainImage} productId={productId} />
-        <ProductButton
-          onClick={() => {
-            // TODO: 버튼 이벤트 핸들러 수정
-            console.log("테스트용");
-          }}
-          sticky
-        >
+        <ProductButton onClick={onClickAddBasketButton} sticky>
           장바구니 담기
         </ProductButton>
       </>
