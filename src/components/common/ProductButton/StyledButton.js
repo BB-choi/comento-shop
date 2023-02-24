@@ -1,4 +1,10 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+
+const stickyStyle = css`
+  position: sticky;
+  bottom: 0;
+  left: 0;
+`;
 
 const StyledButton = styled.button`
   width: 100%;
@@ -10,11 +16,10 @@ const StyledButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  position: sticky;
-  bottom: 0;
-  left: 0;
   background-color: ${({ theme: { color } }) => color.secondary01};
   cursor: pointer;
+
+  ${({ sticky }) => sticky && stickyStyle}
 `;
 
 export default StyledButton;

@@ -32,6 +32,7 @@ const ProductDetail = () => {
             // TODO: 버튼 이벤트 핸들러 수정
             console.log("테스트용");
           }}
+          sticky
         >
           장바구니 담기
         </ProductButton>
