@@ -20,6 +20,7 @@ const StyledButton = styled.button`
   justify-content: center;
   position: absolute;
   cursor: pointer;
+  z-index: 0;
   ${({ component }) => buttonPosition[component]}
 `;
 
