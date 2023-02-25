@@ -17,10 +17,12 @@ const BasketContent = ({ productIds }) => {
   }
 
   return (
-    <Wrap>
-      <BasketProducts products={products} />
+    <>
+      <Wrap>
+        <BasketProducts products={products} />
+      </Wrap>
       <BasketFooter products={products} />
-    </Wrap>
+    </>
   );
 };
 
