@@ -5,7 +5,12 @@ import BasketProducts from "./BasketProducts";
 import Message from "./Message";
 import Wrap from "./Wrap";
 
-const BasketContent = ({ productIds, onClickRemoveButton }) => {
+const BasketContent = ({
+  productIds,
+  onClickRemoveButton,
+  onClickPurchaseButton,
+  isShowModal,
+}) => {
   const [products, setProducts] = useState();
 
   useEffect(
@@ -19,7 +24,7 @@ const BasketContent = ({ productIds, onClickRemoveButton }) => {
 
   return (
     <>
-      <Wrap>
+      <Wrap isShowModal={isShowModal}>
         {(products.length && (
           <BasketProducts
             products={products}
@@ -27,7 +32,10 @@ const BasketContent = ({ productIds, onClickRemoveButton }) => {
           />
         )) || <Message>장바구니가 비어있습니다.</Message>}
       </Wrap>
-      <BasketFooter products={products} />
+      <BasketFooter
+        products={products}
+        onClickPurchaseButton={onClickPurchaseButton}
+      />
     </>
   );
 };

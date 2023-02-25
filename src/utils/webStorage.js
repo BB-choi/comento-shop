@@ -21,6 +21,10 @@ const addItem = (item, itemKey) => {
   return true;
 };
 
+const removeAll = (key) => {
+  localStorage.removeItem(key);
+};
+
 const getBasket = () => {
   return getItems(CART);
 };
@@ -33,7 +37,7 @@ const addBasket = (productId) => {
   return true;
 };
 
-const removeBasket = (productId) => {
+const removeBasketItem = (productId) => {
   const currentItems = getItems(CART);
 
   localStorage.setItem(
@@ -42,4 +46,8 @@ const removeBasket = (productId) => {
   );
 };
 
-export { getBasket, addBasket, removeBasket };
+const removeBasket = () => {
+  removeAll(CART);
+};
+
+export { getBasket, addBasket, removeBasketItem, removeBasket };
