@@ -4,8 +4,8 @@ import ButtonArea from "./Info/ButtonArea";
 import Thumbnail from "./Thumbnail";
 import Wrap from "./Wrap";
 
-const BasketItem = ({ product }) => {
-  const { thumbnail, name, price, id } = product;
+const BasketItem = ({ product, onClick: onClickRemoveButton }) => {
+  const { thumbnail, name, price } = product;
 
   return (
     <Wrap>
@@ -15,10 +15,7 @@ const BasketItem = ({ product }) => {
         <IconButton
           icon="delete"
           component="basket"
-          onClick={() => {
-            // TODO: 클릭 이벤트핸들러 수정
-            console.log(`테스트용 ${id}`);
-          }}
+          onClick={onClickRemoveButton}
         />
       </ButtonArea>
     </Wrap>

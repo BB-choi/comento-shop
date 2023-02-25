@@ -2,14 +2,13 @@ import PriceItem from "./PriceItem";
 import Wrap from "./Wrap";
 
 const DELIVERY_CHARGE = 3000;
-const MIN_FREE_DELIVERY_CHARGE = 30000;
 
 const calcDeliveryCharge = (totalPrice) => {
-  if (totalPrice < MIN_FREE_DELIVERY_CHARGE) {
-    return DELIVERY_CHARGE;
+  if (!totalPrice) {
+    return 0;
   }
 
-  return 0;
+  return DELIVERY_CHARGE;
 };
 
 const BasketPrice = ({ count, price }) => {
