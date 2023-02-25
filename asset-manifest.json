@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.js": "/comento-shop/static/js/main.4a4eef3d.js",
+    "static/media/delete.svg": "/comento-shop/static/media/delete.d858f0bceb7ad86ffc45de7acb6a7611.svg",
+    "index.html": "/comento-shop/index.html",
+    "static/media/back.svg": "/comento-shop/static/media/back.34b04f42eef598528e05e3fadaceb70a.svg",
+    "main.4a4eef3d.js.map": "/comento-shop/static/js/main.4a4eef3d.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.4a4eef3d.js"
+  ]
+}
